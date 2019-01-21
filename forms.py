@@ -8,3 +8,8 @@ class SignupForm(Form):
   email = StringField('Email', [validators.DataRequired('Please enter your email address.'), validators.Email('Please enter a valid email address.')])
   password = PasswordField('Password', [validators.DataRequired('Please enter your password.'), validators.Length(min=6, message='Passwords must be 6 characters or more.')])
   submit = SubmitField('Sign up')
+  
+class LoginForm(Form):
+  email = StringField('Email', [validators.DataRequired('Please enter your email address.'), validators.Email('Please enter a valid email address.')])
+  password = PasswordField('Password', [validators.DataRequired('Please enter your password.')])
+  submit = SubmitField('Sign in')
